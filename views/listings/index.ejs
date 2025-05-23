@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<!-- <style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filter {
+    text-align: center;
+    margin-right: 1rem;
+    opacity: 0.8;
+  }
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+    border-bottom: 2px solid #727272;
+  }
+  .filter p {
+    font-size: 0.7rem;
+  }
+</style> -->
+<body>
+  <br />
+  <div class="one">
+    <a class="one-logo" href="/listings"
+      ><i class="fa-solid fa-suitcase-rolling"></i
+    ></a>
+
+    <h2 class="mt-2">"Book with confidence, travel with joy, stay with us."</h2>
+
+    <button class="mt-2">Book now</button>
+    <span class="mt-2">scroll down</span>
+  </div>
+  <br />
+  <hr />
+  <div class="two">
+    <h2 class="text-center">Explore our listings</h2>
+    <p class="text-center">
+      Discover a world of possibilities with our curated selection of
+      accommodations, designed to suit every traveler's needs.
+    </p>
+
+    <h3 class="text-center">
+      Popular homes
+      <span style="margin-left: 8px; color: #ffffff">
+        <i class="fa-solid fa-house-chimney"></i>
+      </span>
+    </h3>
+  </div>
+
+  <!-- <div id="filters">
+    <div class="filter">
+      <div><i class="fa-solid fa-fire-flame-curved"> </i></div>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+  </div> -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% for ( let listing of allListings) { %>
+    <div class="col">
+      <a
+        href="/listings/<%= listing._id %>"
+        style="text-decoration: none; color: inherit"
+      >
+        <div class="card h-100">
+          <div class="card-img-wrapper">
+            <img
+              src="<%= listing.image.url %>"
+              class="card-img-top"
+              alt="image"
+              style="height: 12rem"
+            />
+            <div class="card-img-overlay">
+              <p><%= listing.description %></p>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b><%= listing.title %></b></h5>
+            <p class="card-text">
+              <!-- Some quick example text to build on the card title and make up the bulk
+        of the card's content. -->
+              &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% } %>
+  </div>
+  <br />
+</body>

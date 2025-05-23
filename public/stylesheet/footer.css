@@ -1,0 +1,48 @@
+footer {
+  display: flex;
+  background: linear-gradient(90deg, #fff5f7 0%, #ffe3ec 100%);
+  border-top: 1.5px solid #ffe3ec;
+  box-shadow: 0 -2px 12px rgba(255, 56, 92, 0.07);
+  padding: 2rem 0 1.2rem 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.img img {
+  height: 250px;
+  width: 100%;
+}
+.ran-text {
+  text-align: center;
+}
+.ran-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff385c;
+}
+.ran-text p:hover {
+  background: linear-gradient(90deg, #ff385c, #ff5a5f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.right-side {
+  padding: 1rem;
+  position: relative;
+  left: 20rem;
+}
+
+.f-info {
+  background: none;
+}
+.f-info-socials i {
+  color: #ff385c;
+  font-size: 2rem;
+}
+.f-info-socials i:hover {
+  color: #fd6682;
+  cursor: pointer;
+}
+
+.f-info-links {
+  font-weight: 500;
+}
